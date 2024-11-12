@@ -37,7 +37,7 @@ defaults
 listen 6287-webs
     bind *:80
     bind *:443 ssl crt /etc/letsencrypt/live/www.leftie.tech/leftie.pem
-    mode http
+				redirect scheme https if !{ ssl_fc }
     balance roundrobin
     server 6287-web-01 54.237.196.178:80 check
     server 6287-web-02 107.21.80.231:80 check
