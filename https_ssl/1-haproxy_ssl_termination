@@ -44,8 +44,8 @@ listen nimson
 	option http-server-close
 	option httpclose
 	option forwardfor
-	server 134413-web-01 100.25.215.29:80 check
-        server 134413-web-02 52.3.241.227:80 check
+	server 134413-web-01 54.237.196.178:80 check
+        server 134413-web-02 107.21.80.231:80 check
 
 frontend www-http
 	bind *:80
@@ -61,8 +61,8 @@ frontend www-https
 
 backend www-backend
 	redirect scheme https if !{ ssl_fc }
-	server 134413-web-01 100.25.215.29:80 check
-        server 134413-web-02 52.3.241.227:80 check
+	server 134413-web-01 54.237.196.178:80 check
+        server 134413-web-02 107.21.80.231:80 check
 
 backend letsencrypt-backend
 	server letsencrypt 127.0.0.1:54321
